@@ -1,0 +1,64 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+	 <script src="js/bootstrap.min.js"></script>
+	 <script>
+	 $(document).ready(
+	 	function(){
+
+	 		alert($('#elemento1').css('fontSize'));
+	 		$('#elemento1').css('fontSize', '100px');
+	 		alert($('#elemento1').css('fontSize'));
+	 		$('#elemento1').hide('slow');
+	 		$('#elemento1').show('slow');
+	 		$('#elemento1').click(
+	 			function(){
+	 				$(this).hide('slow');
+	 				$(this).show('slow');
+
+	 			}
+	 		);
+	 		$('#boton').click(
+	 			function(){
+                alert($('#input1').val());
+	 			});
+	        $('#boton1').click(
+	 			function(){
+                alert(parseInt($('#input2').val())+parseInt($('#input3').val()));
+	 			});
+
+	 		window.open("http://www.google.com/");
+	         return confirm("Esta pagina es para mayor de 18 años")
+	 		document.write(escape("Nuevo Texto"))
+
+	 	}
+ 	
+
+	 );
+
+</script>
+	 <input type="text" id="input1">
+	 <button id="boton">Acepta</button>
+</head>
+
+<body>
+	    
+    </script>    	
+	<div id="container" class="elemento2">
+		<h1 id="titulo">
+			<p class="parrafo" id="elemento1">Javascript</p>
+	    </h1>
+    </div>
+    <div>
+    	<h1 class="titulo">Java</h1>
+    	<h2 class="titulo">Script</h2>
+    </div>
+    <div>
+    <input type="text" id="input2">
+    <input type="text" id="input3">
+    <button id="boton1">Sumar</button>
+    </div>
+
+
+</body>
+</html>
