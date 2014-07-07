@@ -365,7 +365,7 @@
     <script src="js/bootstrap.min.js"></script>
          <script type="text/javascript">
             $(function () {
-                $('#datetimepicker1').datetimepicker();
+                $('#datetimepicker1').datetimepicker({language: 'es'});
             });
                $(function () {
                 $('#datetimepicker2').datetimepicker({
@@ -373,9 +373,8 @@
                 });
             });
                $(function () {
-                $('#datetimepicker3').datetimepicker({
-                    pick12HourFormat: false
-                });
+                $('#datetimepicker3').datetimepicker( {language: 'es'}
+                	);
                 $("#setMinDate").click(function () {
                     $('#datetimepicker3').data("DateTimePicker").setMinDate(new Date("june 12, 2013"));
                 });                                
@@ -399,8 +398,8 @@
                 });
             });
         $(function () {
-            $('#datetimepicker8').datetimepicker();
-            $('#datetimepicker9').datetimepicker();
+            $('#datetimepicker8').datetimepicker({language: 'es'});
+            $('#datetimepicker9').datetimepicker({language: 'es'});
             $("#datetimepicker8").on("dp.change",function (e) {
                $('#datetimepicker9').data("DateTimePicker").setMinDate(e.date);
             });
