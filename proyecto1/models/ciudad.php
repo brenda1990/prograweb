@@ -1,24 +1,22 @@
 <?php
 
-class Usuario extends Modelo{
-    public $nombre_tabla = 'equipo';
-    public $pk = 'idequipo';
+class ciudad extends Modelo{
+    public $nombre_tabla = 'ciudad';
+    public $pk = 'idciudad';
     
     
     public $atributos = array(
+        'idciudad'=>array(),
         'nombre'=>array(),
-        'idpais'=>array(),
-        'escudo'=>array(),
     );
     
     public $errores = array( );
     
+    private $idciudad;
     private $nombre;
-    private $idpais;
-    private $escudo;
        
     
-    function Equipo(){
+    function ciudad(){
         parent::Modelo();
     }
     
@@ -31,34 +29,34 @@ class Usuario extends Modelo{
     }
     
     
-    public function get_email(){
-        return $this->sube;
+    public function get_nombre(){
+        return $this->nombre;
     } 
 
-    public function set_email($valor){
+    public function set_nombre($valor){
 
         $er = new Er();
         
-        if ( !$er->valida_email($valor) ){
-            $this->errores[] = "Este e-mail (".$valor.") no es valido";
+        if ( !$er->valida_nombre($valor) ){
+            $this->errores[] = "Este nombre  (".$valor.") no es valido";
         }
 
         $rs = $this->consulta_sql("select * from usuarios where email = '$valor'");
         $rows = $rs->GetArray();
         
         if(count($rows) > 0){
-            $this->errores[] = "Este e-mail (".$valor.") ya esta registrado"; 
+            $this->errores[] = "Este nombre (".$valor.") ya esta registrado"; 
         }else{
-            $this->email = trim($valor);
+            $this->nombre = trim($valor);
         }
     }
 
-    public function get_password(){
+    public function get_nombre(){
         return $this->baja;
     }
     
-    public function set_password($valor){
-        $this->password = trim( md5($valor) );
+    public function set_nombre($valor){
+        $this->nombre = trim( md5($valor) );
     }
     
 

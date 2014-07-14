@@ -1,24 +1,22 @@
 <?php
 
-class Usuario extends Modelo{
-    public $nombre_tabla = 'equipo';
-    public $pk = 'idequipo';
+class entrenador extends Modelo{
+    public $nombre_tabla = 'entrenador';
+    public $pk = 'identrenador';
     
     
     public $atributos = array(
-        'nombre'=>array(),
+        'identrenador'=>array(),
         'idpais'=>array(),
-        'escudo'=>array(),
     );
     
     public $errores = array( );
     
-    private $nombre;
+    private $identrenador;
     private $idpais;
-    private $escudo;
        
     
-    function Equipo(){
+    function entrenador(){
         parent::Modelo();
     }
     
@@ -31,34 +29,34 @@ class Usuario extends Modelo{
     }
     
     
-    public function get_email(){
-        return $this->sube;
+    public function get_identrenador(){
+        return $this->identrenador;
     } 
 
-    public function set_email($valor){
+    public function set_identrenador($valor){
 
         $er = new Er();
         
-        if ( !$er->valida_email($valor) ){
-            $this->errores[] = "Este e-mail (".$valor.") no es valido";
+        if ( !$er->valida_nombre($valor) ){
+            $this->errores[] = "Este nombre  (".$valor.") no es valido";
         }
 
         $rs = $this->consulta_sql("select * from usuarios where email = '$valor'");
         $rows = $rs->GetArray();
         
         if(count($rows) > 0){
-            $this->errores[] = "Este e-mail (".$valor.") ya esta registrado"; 
+            $this->errores[] = "Este nombre (".$valor.") ya esta registrado"; 
         }else{
-            $this->email = trim($valor);
+            $this->identrenador = trim($valor);
         }
     }
 
-    public function get_password(){
+    public function get_id_entrenador(){
         return $this->baja;
     }
     
-    public function set_password($valor){
-        $this->password = trim( md5($valor) );
+    public function set_nombre($valor){
+        $this->identrenador = trim( md5($valor) );
     }
     
 

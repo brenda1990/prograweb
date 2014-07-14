@@ -43,6 +43,8 @@
               <a class="ejemplo" href="..\posicion\pocision.php"><span class="glyphicon glyphicon-file"></span>Posicion</a>
               <a class="ejemplo" href="..\pais\pais.php"><span class="glyphicon glyphicon-open"></span>País</a>
               <a class="ejemplo" href="..\ciudad\ciudad.php"><span class="glyphicon glyphicon-arrow-up"></span>Cuidad</a>
+              <a class="ejemplo" href="..\integrante\integrante.php"><span class="glyphicon glyphicon-paperclip"></span>Integrante</a> 
+              <a class="ejemplo" href="#"><span class="glyphicon glyphicon-ok-sign"></span>Tipo Integrante</a> 
               <a class="ejemplo" href="..\estadio\estadio.php"><span class="glyphicon glyphicon-upload"></span>Estadio</a>    
             </div>
 
