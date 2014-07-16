@@ -1,6 +1,6 @@
 <?php
 
-class estadio extends Modelo{
+class Estadio extends Modelo{
     public $nombre_tabla = 'estadio';
     public $pk = 'idestadio';
     
@@ -17,7 +17,7 @@ class estadio extends Modelo{
     private $idciudad;
        
     
-    function estadio(){
+    function Estadio(){
         parent::Modelo();
     }
     

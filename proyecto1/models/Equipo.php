@@ -34,16 +34,25 @@ class Equipo extends Modelo{
     public function get_nombre(){
         return $this->nombre;
     } 
-
     public function set_nombre($valor){
+        $er = new Er();
+        if(!$er->valida_nombre($valor)){
+            $this->errores[]="Este nombre(".$valor.") no es valido ";
+
+
+        }
+        $this->nombre=trim($valor);
+    }
+
+    public function set_pais($valor){
 
         $er = new Er();
         
         if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = "Este nombre  (".$valor.") no es valido";
+            $this->errores[] = "Funcion que valida nombre  (".$valor.") no es valido";
         }
 
-        $rs = $this->consulta_sql("select * from usuarios where email = '$valor'");
+        $rs = $this->consulta_sql("select * from equipo where nombre = '$valor'");
         $rows = $rs->GetArray();
         
         if(count($rows) > 0){
@@ -53,17 +62,13 @@ class Equipo extends Modelo{
         }
     }
 
-    public function get_nombre(){
+    public function get_escudo(){
         return $this->baja;
     }
     
-    public function set_nombre($valor){
+    public function set_escudo($valor){
         $this->nombre = trim( md5($valor) );
-    }
-    
-
-
-    
+    }   
     
     
 }

@@ -1,6 +1,6 @@
 <?php
 
-class pais extends Modelo{
+class Pais extends Modelo{
     public $nombre_tabla = 'pais';
     public $pk = 'idpais';
     

@@ -1,6 +1,6 @@
 <?php
 
-class integrante extends Modelo{
+class Integrante extends Modelo{
     public $nombre_tabla = 'integrante';
     public $pk = 'idintegrante';
     

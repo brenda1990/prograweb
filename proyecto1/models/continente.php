@@ -1,6 +1,6 @@
 <?php
 
-class continente extends Modelo{
+class Continente extends Modelo{
     public $nombre_tabla = 'continente';
     public $pk = 'idcontinente';
     
@@ -16,7 +16,7 @@ class continente extends Modelo{
     private $nombre;
        
     
-    function continente(){
+    function Continente(){
         parent::Modelo();
     }
     

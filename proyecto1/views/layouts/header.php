@@ -37,7 +37,7 @@
                 <span class="icon-bar"></span>
               </button>
 
-           <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-align-justify"></span>FIFA</a>
+              <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-align-justify"></span>FIFA</a>
               <a class="ejemplo" href="..\equipo\equipo.php"><span class="glyphicon glyphicon-list-alt"></span>Equipo</a>
               <a class="ejemplo" href="..\continente\continente.php"><span class="glyphicon glyphicon-list-alt"></span>Continente</a>
               <a class="ejemplo" href="..\posicion\pocision.php"><span class="glyphicon glyphicon-file"></span>Posicion</a>
