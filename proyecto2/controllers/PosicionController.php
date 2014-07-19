@@ -4,7 +4,7 @@
 		public $muestra_errores = false;
 
 		function __construct(){
-			 //parent::Equipo();
+			 //parent::Posicion();
 		}
 
 		public function insertaIntegrante($datos){

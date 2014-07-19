@@ -17,18 +17,19 @@
   }  
 
 ?>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.css"/>
-    <link rel="stylesheet" href="css/bootstrapValidator.min.css"/>
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!--Either use the compressed version (recommended in the production site)-->
-    <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="source/jquery.fancybox.pack.js"></script>
+        <link rel="stylesheet" href="source/jquery.fancybox.css" type="text/css" media="screen" />
 
-    <!--Or use the original one with all validators included-->
-    <script type="text/javascript" src="js/bootstrapValidator.js"></script>
-   <!-- Required JS -->
+        <link rel="icon" href="favicon.ico">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/justified-nav.css" rel="stylesheet">
+
+
+
+        <script type="text/javascript" src="source/jquery.fancybox.pack.js"></script>
+        <link rel="stylesheet" href="source/jquery.fancybox.css" type="text/css" media="screen" />
 
 <div class="row">
       <div class="col-md-1">  

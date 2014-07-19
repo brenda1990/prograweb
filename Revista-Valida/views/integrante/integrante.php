@@ -1,123 +1,217 @@
 <?php 
-  include ('../../libs/adodb5/adodb-pager.inc.php');
-  include ('../../libs/adodb5/adodb.inc.php');
-  include ('../../models/Conexion.php');
-  include ('../../models/Modelo.php');
-  include ('../../models/Integrante.php');
-  include ('../../controllers/IntegranteController.php');
-  include ('../../libs/Er.php');
-  include ('../layouts/header.php');
+  session_start();
+  include ('../encabezado_inte/header.php');
+  /*
+  cabecera para empezar a estructurar la pagina web pega el header descarga una pagina completa del header */
 
-
-  if (isset($_POST['nombre'])) {
-    /*echo "<pre>"; //muestra los espacios que envia.
-    print_r($_POST);
-    echo "</pre>";*/
-    $integranteC = new IntegranteController();
-    $integranteC->insertaIntegrante($_POST);
-  } 
 ?>
+ <!-- Bootstrap -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css"/>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--Either use the compressed version (recommended in the production site)-->
+    <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+
+    <!--Or use the original one with all validators included-->
+    <script type="text/javascript" src="js/bootstrapValidator.js"></script>
+   <!-- Required JS -->
+
+<script>
+$(document).ready(function() {
+        $('#divfoto').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            foto: {
+                validators: {
+                    file: {
+                        extension: 'jpg',
+                        type: 'image/jpg',
+                        maxSize: 2048 * 1024,   // 2 MB
+                        message: 'no es unaa imagen'
+                    }
+                }
+            }
+        }
+    });
+        $('#forpeso').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            peso: {
+                validators: {
+                    integer: {
+                        message: 'Este no es un valor no entero'
+                    }
+                }
+            }
+        }
+    });  
+        $('#forestatura').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            estatura: {
+                validators: {
+                    integer: {
+                        message: 'Este no es un valor no entero'
+                    }
+                }
+            }
+        }
+    });  
+            $('#foredad').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            edad: {
+                validators: {
+                    integer: {
+                        message: 'Este no es un valor no entero'
+                    }
+                }
+            }
+        }
+    });
+    $('#datetimePicker').datetimepicker();
+
+
+    $('#datetimePicker')
+        .on('dp.change dp.show', function(e) {
+            // Validate the date when user change it
+            $('#uploadForm')
+                // Get the bootstrapValidator instance
+                .data('bootstrapValidator')
+                // Mark the field as not validated, so it'll be re-validated when the user change date
+                .updateStatus('meeting', 'NOT_VALIDATED', null)
+                // Validate the field
+                .validateField('meeting');
+        });
+});
+</script>
+ <div class="container">
+
+      
+    <div class="row" align="center">
+      <div class="col-md-6"><br/>
+      <label>REGISTRAR INTEGRANTE</label>
+ 
+          <form id="form1">
+
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" class="form-control" name="nombre" />
+        </div>
+        <div class="form-group">
+            <label>Apellido</label>
+            <input type="text" class="form-control" name="apellido" />
+        </div>
+        </form>
     
+        <div class="form-group" id="forpeso">      
+        
+                        <label class="col-lg-3 control-label">Peso</label>
+                        <div class="col-cmd-6">
+                            <input type="text" class="form-control" name="peso" />
+                        </div>
+                
+                </div>
 
-        <p><a class="btn btn-primary btn-lg" role="button" id="boton1">Ver Formularios &raquo;</a></p>
+        <div class="form-group" id="forestatura">      
+        
+                        <label class="col-lg-3 control-label">Estatura</label>
+                        <div class="col-cmd-6">
+                            <input type="text" class="form-control" name="estatura" />
+                        </div>
+                
+                </div>
+                <div class="form-group" id="foredad">      
+        
+                        <label class="col-lg-3 control-label">Edad</label>
+                        <div class="col-cmd-6">
+                            <input type="text" class="form-control" name="edad" />
+                        </div>
+                
+                </div>
+        
+     
+      <form id="divfoto" class="form-horizontal" enctype="multipart/form-data">
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Foto</label>
+        <div class="col-lg-9">
+            <input type="file" class="form-control" name="foto" />
+        </div>
+    </div>
+</form> 
+</div>    
+  </div>
+   </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.es.js"></script>
+    <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+   
+         $(function () {
 
+        $('#form1').bootstrapValidator({
+        fields: {
+            nombre: {
+                message: 'Ingrese un nombre valido',
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: 'The username must be more than 6 and less than 30 characters long'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: 'The username can only consist of alphabetical, number and underscore'
+                    }
+                }
+            },
+              apellido: {
+                message: 'Ingrese un nombre valido',
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required and cannot be empty'
+                    },
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: 'The username must be more than 6 and less than 30 characters long'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: 'The username can only consist of alphabetical, number and underscore'
+                    }
+                }
+            },       
+        }
+    });
+  });
+        </script>
 
-    <div class="row">
-
-          <div class="col-md-4" id="formulario2">
-          <h2 id="integrante">Integrante</h2>
-          <form method="POST" id="form_integrante" role="form">
-            <div class="form-group">
-              <label for="nombre">Nombre:</label>
-              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa el nombre del integrante" required>
-            </div>
-
-            <div class="form-group">
-              <label for="apellido">Apellido:</label>
-              <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingresa el apellido del integrante" required>
-            </div>
-
-            <div class="form-group">
-              <label for="peso">Peso:</label>
-              <input type="text" class="form-control" id="peso" name="peso" placeholder="Ingresa el peso del integrante" required>
-            </div>
-
-            <div class="form-group">
-              <label for="estatura">Estatura:</label>
-              <input type="text" class="form-control" id="estatura" name="estatura" placeholder="Ingresa la estatura del integrante" required>
-            </div>
-
-            <div class="form-group">
-              <label for="edad">Edad:</label>
-              <input type="text" class="form-control" id="edad" name="edad" placeholder="Ingresa la edad del integrante" required>
-            </div>
-
-            <div class="form-group">
-              <label for="foto">Foto:</label>
-              <input type="file" id="foto" name="foto" required>
-            </div>
-
-            <div class="form-group">
-              <label for="id_equipo">Equipo:</label>
-              <select id="id_equipo" name="id_equipo" class="form-control" required>
-                <option value="" disabled selected>Seleccionar</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-
-            <p><a class="btn btn-default" href="#" role="button" id="boton2">Entrenador &raquo;</a></p>
-            <p><a class="btn btn-default" href="#" role="button" id="boton3">Jugador &raquo;</a></p>  
-            <!--</div>-->
-            <div id="formulario3">
-              <h2>Tipo de integrante</h2>
-            <div class="form-group" id="form_jugador">
-              <h3>Jugador</h3>
-              <div class="form-group">
-                <label for="numero">numero:</label>
-                <input type="text" class="form-control" id="numero" name="numero" placeholder="Ingresa el numero del jugador" required>
-              </div>  
-
-              <div class="form-group">
-                <label for="id_posicion">Posici&oacute;n:</label>
-                <select id="id_posicion" name="id_posicion" class="form-control" required>
-                  <option value="" disabled selected>Seleccionar</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-            </div>
-
-
-
-            <div class="form-group" id="form_entrenador">
-              <h3>Entrenador</h3>
-              
-              <div class="form-group">
-                <label for="id_pais">Pais:</label>
-                <select id="id_pais" name="id_pais" class="form-control" required>
-                  <option value="" disabled selected>Seleccionar</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-              </div>
-            </div> 
-            </div>
-            <p><input type="submit" class="btn btn-default" value="Guardar"></p>
-
-          </form>          
-       </div>
-      </div>
-
-
-
-<?php include ('../layouts/footer.php'); ?>
+<?ph
