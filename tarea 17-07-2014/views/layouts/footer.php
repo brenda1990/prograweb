@@ -1,4 +1,4 @@
-﻿ 
+ 
 	 <div class="row">
 	 	
 	 	<div class="col-md-12">
@@ -6,7 +6,11 @@
 	 		<p class="text-center">
 	 			
 	 			Clase programación web. <br><span class="glyphicon glyphicon-registration-mark"> </span> <?php echo date('Y'); ?>
-	 			
+	 			<pre>
+	 		     <?php
+	 		     print_r($_SESSION);
+	 		     ?>
+	 		     </pre>
 	 		</p>
 	 	</div>	
 	 	

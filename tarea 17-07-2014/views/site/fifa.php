@@ -8,8 +8,9 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="source/jquery.fancybox.pack.js"></script>
         <link rel="stylesheet" href="source/jquery.fancybox.css" type="text/css" media="screen" />
-
-        <link rel="icon" href="favicon.ico">
+        <link rel="shortcut icon" href="../ima/icono.ico">
+        <body background="boton.jpg">
+        <link rel="../ima/banderas.jpg" href="favicon.ico">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/justified-nav.css" rel="stylesheet">
 

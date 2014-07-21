@@ -22,6 +22,21 @@
 
 ?>
 <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css"/>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--Either use the compressed version (recommended in the production site)-->
+    <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
+
+    <!--Or use the original one with all validators included-->
+    <script type="text/javascript" src="js/bootstrapValidator.js"></script>
+   <!-- Required JS -->
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+ <link rel="shortcut icon" href="../ima/icono.ico">
+        <body background="banderas.jpg">
 
 <div class="container">
      <div class="row">
@@ -49,12 +64,12 @@
                
               }
               ?>
-             <form method="POST" id="formulario" role="form" enctype="multipart/form-data">
-                <div class="form-group">
+             <form method="POST" id="formulari" role="form" enctype="multipart/form-data">
+                <div class="form-group" id="formulario" name="formulario">
                   <label for="nombre">Nombre:</label>
                   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="integer" name="integer">
                   <label for="nombre">ID CONTINENTE:</label>
                   <input type="text" class="form-control" id="idcontinente" name="idcontinente" placeholder="id continente">
                 </div>
@@ -76,7 +91,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
     $(function () {
-        $('#formulari').bootstrapValidator({
+        $('#formulario').bootstrapValidator({
         fields: {
             nombre: {
                 message: 'The username is not valid',
@@ -95,6 +110,22 @@
                     }
                 }
             },
+        }
+    });
+          $('#integer').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            idcontinente: {
+                validators: {
+                    integer: {
+                        message: 'The value is not an integer'
+                    }
+                }
+            }
         }
     });
         $(document).ready(function() {

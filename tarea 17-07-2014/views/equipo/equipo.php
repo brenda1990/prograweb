@@ -25,6 +25,10 @@ include ('../../libs/adodb5/adodb-pager.inc.php');
    
 
 ?>
+<link rel="stylesheet" type="text/css" media="screen" href="content/bootstrap-datetimepicker.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="dia.ico">
+<body background="bandera.jpg">
 <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/bootstrapValidator.min.css"/>
