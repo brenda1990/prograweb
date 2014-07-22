@@ -3,14 +3,12 @@
   include ('../../libs/adodb5/adodb.inc.php');
   include ('../../models/Conexion.php');
   include ('../../models/Modelo.php');
-  include ('../../models/Continente.php');
-  include ('../../controllers/siteController/ControllerContinente.php');
+  include ('../../models/Estado.php');
+  include ('../../controllers/siteController/ControllerEstado.php');
   include ('../../libs/Er.php');
-     $continenteC = new ControllerContinente();
+    $estadoC = new ControllerEstado();
   if (isset($_POST['nombre'])) {
-   
-    $continenteC->insertaContinente($_POST,$_FILES);
-
+    $paisC->insertaPais($_POST,$_FILES);
   } 
 
 
@@ -38,19 +36,19 @@
      <div class="row">
          <div class="col-md-12">
            <h1 class="text-center"> 
-            <span class="glyphicon glyphicon-arrow-up"><span> REGISTRO CONTINENTE
+            <span class="glyphicon glyphicon-arrow-up"><span> REGISTRO ESTADO
             </h1>
           </div>
        </div>
-       <div class="row" >
+       <div class="row">
          <div class="col-md-4"> 
               <?php
-              if($continenteC->muestra_errores){
+              if($estadoC->muestra_errores){
                   ?>
                   <div class="alert alert-danger"> 
                     <?php
 
-                  foreach ($continenteC->errores as $value) {
+                  foreach ($estadoC->errores as $value) {
                          echo "<p>error: $value</p>";
                   } 
                   ?>
@@ -60,14 +58,13 @@
                
               }
               ?>
-             <form method="POST" id="formulario" role="form" enctype="multipart/form-data">
-                <div class="form-group" id="formulario" name="formulario" >
+             <form method="POST" id="formulari" role="form" enctype="multipart/form-data">
+                <div class="form-group" id="formulario" name="formulario">
                   <label for="nombre">Nombre:</label>
                   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
                 </div>
-             <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
               </form>
-                 
   </div>
   </div>
   </div>
@@ -90,13 +87,19 @@
                     notEmpty: {
                         message: 'Necesarios 6 caracteres minimos'
                     },
-                   
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: 'The username must be more than 6 and less than 30 characters long'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: 'The username can only consist of alphabetical, number and underscore'
+                    }
                 }
             },
         }
-    });
- 
-     
+    });  
   });
 </script>
 <?php

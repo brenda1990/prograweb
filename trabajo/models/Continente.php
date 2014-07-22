@@ -13,6 +13,7 @@ class Continente extends Modelo{
     public $errores = array( );
     
     private $nombre;
+    
 
     
     function Continente(){

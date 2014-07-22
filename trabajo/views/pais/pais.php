@@ -3,13 +3,13 @@
   include ('../../libs/adodb5/adodb.inc.php');
   include ('../../models/Conexion.php');
   include ('../../models/Modelo.php');
-  include ('../../models/Continente.php');
-  include ('../../controllers/siteController/ControllerContinente.php');
+  include ('../../models/Pais.php');
+  include ('../../controllers/siteController/ControllerPais.php');
   include ('../../libs/Er.php');
-     $continenteC = new ControllerContinente();
+     $paisC = new ControllerPais();
   if (isset($_POST['nombre'])) {
    
-    $continenteC->insertaContinente($_POST,$_FILES);
+    $paisC->insertaPais($_POST,$_FILES);
 
   } 
 
@@ -20,20 +20,16 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/bootstrapValidator.min.css"/>
-
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!--Either use the compressed version (recommended in the production site)-->
     <script type="text/javascript" src="js/bootstrapValidator.min.js"></script>
-
     <!--Or use the original one with all validators included-->
     <script type="text/javascript" src="js/bootstrapValidator.js"></script>
    <!-- Required JS -->
-
 <link href="css/bootstrap.min.css" rel="stylesheet">
  <link rel="shortcut icon" href="icono.ico">
         <body background="banderas.jpg">
-
 <div class="container">
      <div class="row">
          <div class="col-md-12">
@@ -45,12 +41,12 @@
        <div class="row" >
          <div class="col-md-4"> 
               <?php
-              if($continenteC->muestra_errores){
+              if($paisC->muestra_errores){
                   ?>
                   <div class="alert alert-danger"> 
                     <?php
 
-                  foreach ($continenteC->errores as $value) {
+                  foreach ($paisC->errores as $value) {
                          echo "<p>error: $value</p>";
                   } 
                   ?>
@@ -62,7 +58,7 @@
               ?>
              <form method="POST" id="formulario" role="form" enctype="multipart/form-data">
                 <div class="form-group" id="formulario" name="formulario" >
-                  <label for="nombre">Nombre:</label>
+                  <label for="nombre">Nombre del pais:</label>
                   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
                 </div>
              <button type="submit" class="btn btn-primary">Guardar</button>

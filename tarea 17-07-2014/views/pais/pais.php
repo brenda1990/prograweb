@@ -128,43 +128,7 @@
             },
         }
     });
-          $('#integer').bootstrapValidator({
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            idcontinente: {
-                validators: {
-                    integer: {
-                        message: 'The value is not an integer'
-                    }
-                }
-            }
-        }
-    });
-        $(document).ready(function() {
-    $('#imabandera').bootstrapValidator({
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            bandera: {
-                validators: {
-                    file: {
-                        extension: 'jpg,png',
-                        type: 'image/jpg,image/png',
-                        maxSize: 2048 * 1024,   // 2 MB
-                        message: 'The selected file is not valid'
-                    }
-                }
-            }
-        }
-    });
-});
+   
   });
 </script>
-<?ph
+<?php
