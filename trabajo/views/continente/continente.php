@@ -1,14 +1,11 @@
 <?php  
-include ('../../libs/security.php');
-   // include ('../layouts/header.php');
-    include ('../../libs/adodb5/adodb-pager.inc.php');
-    include ('../../libs/adodb5/adodb.inc.php');
-    include ('../../models/Conexion.php');
-    include ('../../models/Modelo.php');
-    include ('../../models/Continente.php');
-    include ('../../controllers/ContinenteController.php');
-    include ('../../libs/Er.php');
- // include ('../encabezado_inte/header.php');
+  include ('../../libs/adodb5/adodb-pager.inc.php');
+  include ('../../libs/adodb5/adodb.inc.php');
+  include ('../../models/Conexion.php');
+  include ('../../models/Modelo.php');
+  include ('../../models/Continente.php');
+  include ('../../controllers/siteController/ControllerContinente.php');
+  include ('../../libs/Er.php');
      $continenteC = new ControllerContinente();
   if (isset($_POST['nombre'])) {
     /*echo "<pre>"; //muestra los espacios que envia.
@@ -19,15 +16,11 @@ include ('../../libs/security.php');
 
   } 
 
+
+   
+
 ?>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>REGISTRAR CONTINENTE</title>
-
-    <!-- Bootstrap -->
-   <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/bootstrapValidator.min.css"/>
 
@@ -40,24 +33,48 @@ include ('../../libs/security.php');
     <script type="text/javascript" src="js/bootstrapValidator.js"></script>
    <!-- Required JS -->
 
-  <div class="container">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+ <link rel="shortcut icon" href="icono.ico">
+        <body background="banderas.jpg">
 
-      
-    <div class="row" align="center">
-      <div class="col-md-6"><br/>
-      <label>REGISTRAR CONTINENTE</label>
-          <form method="POST" id="form1" role="form" enctype="multipart/form-data">
-             <div class="form-group">
-            <label>NOMBRE DEL CONTINENTE</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" />
-             </div>
-               </form>
-             </div>  
-                <button type="submit" class="btn btn-default">Registrar</button>  
-             </div>
-   </div>
-  
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<div class="container">
+     <div class="row">
+         <div class="col-md-12">
+           <h1 class="text-center"> 
+            <span class="glyphicon glyphicon-arrow-up"><span> REGISTRO DEPARTAMENTO
+            </h1>
+          </div>
+       </div>
+       <div class="row">
+         <div class="col-md-4"> 
+              <?php
+              if($continenteC->muestra_errores){
+                  ?>
+                  <div class="alert alert-danger"> 
+                    <?php
+
+                  foreach ($continenteC->errores as $value) {
+                         echo "<p>error: $value</p>";
+                  } 
+                  ?>
+                </div>            
+    
+            <?php
+               
+              }
+              ?>
+             <form method="POST" id="formulario" role="form" enctype="multipart/form-data">
+                <div class="form-group" id="formulario" name="formulario">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </form>
+  </div>
+  </div>
+  </div>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/moment.js"></script>
     <script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
@@ -66,13 +83,14 @@ include ('../../libs/security.php');
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        $('#form1').bootstrapValidator({
+    $(function () {
+        $('#formulario').bootstrapValidator({
         fields: {
             nombre: {
-                message: 'Ingrese un nombre valido',
+                message: 'The username is not valid',
                 validators: {
                     notEmpty: {
-                        message: 'The username is required and cannot be empty'
+                        message: 'Necesarios 6 caracteres minimos'
                     },
                     stringLength: {
                         min: 6,
@@ -87,7 +105,8 @@ include ('../../libs/security.php');
             },
         }
     });
-
-        </script>
-
+ 
+     
+  });
+</script>
 <?php
