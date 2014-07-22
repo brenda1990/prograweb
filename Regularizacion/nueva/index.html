@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="source/jquery.fancybox.pack.js"></script>
+        <link rel="stylesheet" href="source/jquery.fancybox.css" type="text/css" media="screen" />
+
+        <link rel="icon" href="favicon.ico">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/justified-nav.css" rel="stylesheet">
+
+        <title>Regularizacion</title>
+
+
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="masthead">
+                <h3 class="text-muted">Project name</h3>
+                <ul class="nav nav-justified">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="ejemplo3.php">EJEMPLO 1</a></li>
+                    <li><a href="ejemplo2.php">Services</a></li>
+                    <li><a href="ejemplo3.php">Downloads</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Jumbotron -->
+            <div class="jumbotron">
+                <h1>Marketing stuff!</h1>
+                <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+                <p><a class="ejemplo" href="formulario.html">EJEMPLO 1</a></p>
+                <p><a class="ejemplo" href="formulario1.php">EJEMPLO 2</a></p>
+            </div>
+
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-lg-4">
+                    //un formulario
+                </div>
+                <div class="col-lg-4">
+                       //formulario
+                </div>
+                <div class="col-lg-4">
+                   //formulario
+                </div>
+            </div>
+
+            <!-- Site footer -->
+            <div class="footer">
+                <p>&copy; Company 2014</p>
+            </div>
+
+        </div> <!-- /container -->
+
+
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".ejemplo").fancybox({
+                    'autoScale': false,
+                    'transitionIn': 'none',
+                    'transitionOut': 'none',
+                    'width': 680,
+                    'height': 450,
+                    'type': 'iframe'
+                });
+            });
+        </script> 
+
+
+    </body>
+</html>

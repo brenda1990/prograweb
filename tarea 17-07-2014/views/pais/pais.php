@@ -35,14 +35,14 @@
    <!-- Required JS -->
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
- <link rel="shortcut icon" href="../ima/icono.ico">
+ <link rel="shortcut icon" href="icono.ico">
         <body background="banderas.jpg">
 
 <div class="container">
      <div class="row">
          <div class="col-md-12">
            <h1 class="text-center"> 
-            <span class="glyphicon glyphicon-arrow-up"><span> Registro Pais
+            <span class="glyphicon glyphicon-arrow-up"><span> Registro Departamento
             </h1>
           </div>
        </div>
@@ -70,10 +70,26 @@
                   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
                 </div>
                 <div class="form-group" id="integer" name="integer">
-                  <label for="nombre">ID CONTINENTE:</label>
+                  <label for="nombre">ubicacion:</label>
+                  <input type="text" class="form-control" id="ubicacion" name="ubicacion" placeholder="id continente">
+                </div>
+                <div class="form-group" id="integer" name="integer">
+                  <label for="nombre">direccion:</label>
+                  <input type="text" class="form-control" id="direccion" name="direccion" placeholder="id continente">
+                </div>
+                <div class="form-group" id="integer" name="integer">
+                  <label for="nombre">nombre pro:</label>
+                  <input type="text" class="form-control" id="nombrepro" name="nombrepro" placeholder="id continente">
+                </div>
+                <div class="form-group" id="integer" name="integer">
+                  <label for="nombre">ubicacion:</label>
                   <input type="text" class="form-control" id="idcontinente" name="idcontinente" placeholder="id continente">
                 </div>
-                      <label for="">Agregar bandera:</label>
+                <div class="form-group" id="integer" name="integer">
+                  <label for="nombre">ubicacion:</label>
+                  <input type="text" class="form-control" id="idcontinente" name="idcontinente" placeholder="id continente">
+                </div>
+                      <label for="">direccion</label>
                       <input type="file" class="form-control" id="bandera" name="bandera" placeholder="ARTICULO" required>
                        <button type="submit" class="btn btn-primary">Guardar</button>
               </form>

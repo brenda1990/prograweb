@@ -1,217 +1,194 @@
-fancyBox
-========
+# Summernote
+Super Simple WYSIWYG Editor on Bootstrap(3.0 and 2.x).
 
-fancyBox is a tool that offers a nice and elegant way to add zooming functionality for images, html content and multi-media on your webpages.
+[![Build Status](https://secure.travis-ci.org/HackerWins/summernote.png)](http://travis-ci.org/HackerWins/summernote)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-More information and examples: http://www.fancyapps.com/fancybox/
+### Summernote
+Summernote is a javascript program that helps you to create WYSIWYG Editor on web.
 
-License: http://www.fancyapps.com/fancybox/#license
+Home Page: http://hackerwins.github.io/summernote/
 
-Copyright (c) 2012 Janis Skarnelis - janis@fancyapps.com
+### Why Summernote?
 
+Summernote has something specials no like others.
+* Simple UI
+* Interative WYSIWYG editing
+* Handy integration with server
 
-How to use
-----------
+#### Inspired by
+* Gmail WYSIWYG Editor (http://www.gmail.com)
+* Redactor (http://imperavi.com/redactor/)
 
-To get started, download the plugin, unzip it and copy files to your website/application directory.
-Load files in the <head> section of your HTML document. Make sure you also add the jQuery library.
+### Easy to install
 
-    <head>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-        <script type="text/javascript" src="/fancybox/jquery.fancybox.pack.js"></script>
-    </head>
+Summernote uses opensouce libraries(jQuery, bootstrap, fontAwesome) 
 
-Create your links with a `title` if you want a title to be shown, and add a class:
+#### 01. include js/css
 
-    <a href="large_image.jpg" class="fancybox" title="Sample title"><img src="small_image.jpg" /></a>
+Include Following code into `<head>` tag of your HTML:
 
-If you have a set of related items that you would like to group,
-additionally include a group name in the `rel` (or `data-fancybox-group`) attribute:
+```html
+<!-- include libries(jQuery, bootstrap, fontawesome) -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script> 
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
 
-    <a href="large_1.jpg" class="fancybox" rel="gallery" title="Sample title 1"><img src="small_1.jpg" /></a>
-    <a href="large_2.jpg" class="fancybox" rel="gallery" title="Sample title 1"><img src="small_2.jpg" /></a>
+<!-- include summernote css/js-->
+<link href="//oss.maxcdn.com/summernote/0.5.1/summernote.css" rel="stylesheet">
+<script src="//oss.maxcdn.com/summernote/0.5.1/summernote.min.js"></script>
+```
 
-Initialise the script like this:
+If your summernote download is placed in a different folder, don't forget to change file's paths.
 
-    <script>
-        $(document).ready(function() {
-            $('.fancybox').fancybox();
-        });
-    </script>
+#### 02. target elements
+And place `div` tag to somewhere in the `body` tag. This element will be placed by the visual representation of the summernote.
+```html
+<div id="summernote">Hello Summernote</div>
+```
 
-May also be passed an optional options object which will extend the default values. Example:
-
-    <script>
-        $(document).ready(function() {
-            $('.fancybox').fancybox({
-                padding : 0,
-                openEffect  : 'elastic'
-            });
-        });
-    </script>
-
-Tip: Automatically group and apply fancyBox to all images:
-
-    $("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.png'],a[href$='.gif']").attr('rel', 'gallery').fancybox();
-
-Script uses the `href` attribute of the matched elements to obtain the location of the content and to figure out content type you want to display.
-You can specify type directly by adding classname (fancybox.image, fancybox.iframe, etc) or `data-fancybox-type` attribute:
-
-    //Ajax:
-    <a href="/example.html" class="fancybox fancybox.ajax">Example</a>
-    //or
-    <a href="/example.html" class="fancybox" data-fancybox-type="ajax">Example</a>
-
-    //Iframe:
-    <a href="example.html" class="fancybox fancybox.iframe">Example</a>
-
-    //Inline (will display an element with `id="example"`)
-    <a href="#example" class="fancybox">Example</a>
-
-    //SWF:
-    <a href="example.swf" class="fancybox">Example</a>
-
-    //Image:
-    <a href="example.jpg" class="fancybox">Example</a>
-
-Note, ajax requests are subject to the [same origin policy](http://en.wikipedia.org/wiki/Same_origin_policy).
-If fancyBox will not be able to get content type, it will try to guess based on 'href' and will quit silently if would not succeed.
-(this is different from previsous versions where 'ajax' was used as default type or an error message was displayed).
-
-Advanced
---------
-
-### Helpers
-
-Helpers provide a simple mechanism to extend the capabilities of fancyBox. There are two built-in helpers - 'overlay' and 'title'.
-You can disable them, set custom options or enable other helpers. Examples:
-
-    //Disable title helper
-    $(".fancybox").fancybox({
-        helpers:  {
-            title:  null
-        }
-    });
-
-    //Disable overlay helper
-    $(".fancybox").fancybox({
-        helpers:  {
-            overlay : null
-        }
-    });
-
-    //Change title position and overlay color
-    $(".fancybox").fancybox({
-        helpers:  {
-            title : {
-                type : 'inside'
-            },
-            overlay : {
-                css : {
-                    'background' : 'rgba(255,255,255,0.5)'
-                }
-            }
-        }
-    });
-
-    //Enable thumbnail helper and set custom options
-    $(".fancybox").fancybox({
-        helpers:  {
-            thumbs : {
-                width: 50,
-                height: 50
-            }
-        }
-    });
-
+#### 03. summernote
+Finally, run script after document ready.
+```javascript
+$(document).ready(function() {
+  $('#summernote').summernote();
+});
+```
 
 ### API
+Get HTML `code` if you need.
 
-Also available are event driven callback methods.  The `this` keyword refers to the current or upcoming object (depends on callback method). Here is how you can change title:
+```javascript
+var sHTML = $('#summernote').code();
+```
 
-    $(".fancybox").fancybox({
-        beforeLoad : function() {
-            this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+`Destroy` summernote.
 
-            /*
-                "this.element" refers to current element, so you can, for example, use the "alt" attribute of the image to store the title:
-                this.title = $(this.element).find('img').attr('alt');
-            */
-        }
-    });
+```javascript
+$('#summernote').destroy();
+```
 
-It`s possible to open fancyBox programmatically in various ways:
+#### Dependencies
+* jQuery: http://jquery.com/
+* Bootstrap: http://getbootstrap.com (both 2.x and 3.x)
+* fontAwesome: https://github.com/FortAwesome/Font-Awesome (both 3.x and 4.x)
 
-    //HTML content:
-    $.fancybox( '<div><h1>Lorem Lipsum</h1><p>Lorem lipsum</p></div>', {
-        title : 'Custom Title'
-    });
+### Supported platform
+* Modern Browser (Safari, Chrome, Firefox, Opera, Internet Explorer 9+)
+* OS (Windows, Mac)
 
-    //DOM element:
-    $.fancybox( $("#inline"), {
-        title : 'Custom Title'
-    });
+### Upcoming Features
+* Responsive Toolbar
+* Table: Handles(Sizing, Selection) and Popover
+* support IE8
+* Clipboard
+* Media Object Selection
 
-    //Custom object:
-    $.fancybox({
-        href: 'example.jpg',
-        title : 'Custom Title'
-    });
+### Change Log
 
-    //Array of objects:
-    $.fancybox([
-        {
-            href: 'example1.jpg',
-            title : 'Custom Title 1'
-        },
-        {
-            href: 'example2.jpg',
-            title : 'Custom Title 2'
-        }
-    ], {
-        padding: 0
-    });
+#### v0.5.2 2014-07-20
+* Air Mode
+* And bug patch (scroll, createLink, ...)
 
-There are several methods that allow you to interact with and manipulate fancyBox, example:
+#### v0.5.1 2014-03-16
+* Support 15 Languages(https://github.com/HackerWins/summernote/tree/master/lang)
+* Add local-server for develop summernote.
+* Font style: Font-Family
+* And Bug patch.
 
-    //Close fancybox:
-    $.fancybox.close();
+#### v0.5 2013-12-29
+* Support both Font-Awesome 3.x and 4.x
+* CodeMirror as Codeview
+* Insert Video (by cdownie)
+* Support 5 Languages(by hendrismit, tschiela, inomies, cverond)
+* Restructuring: jQuery build pattern
 
-There is a simply way to access wrapping elements using JS:
+#### v0.4 2013-11-01
+* Support both Bootstrap 3.0 and 2.x
+* Fullscreen
+* Codeview
+* Image Upload callback
 
-    $.fancybox.wrap
-    $.fancybox.skin
-    $.fancybox.outer
-    $.fancybox.inner
+#### v0.3 2013-09-01
+* Bugs(image upload, fontsize, tab, recent color, ...)
+* Help dialog(keyboard shortcut)
+* Init options(event callbacks, custom toolbar)
+* Resize bar
+* Support IE8 Beta(some range bugs, can't insert Image)
 
-You can override CSS to customize the look. For example, make navigation arrows always visible,
-change width and move them outside of area (use this snippet after including fancybox.css):
+#### v0.2, 2013-08-01
+* Undo/Redo
+* Image sizing handle and popover
+* Support standalone css
+* Support Multiple Editor
+* Remove jQuery.curstyles dependency
 
-    .fancybox-nav span {
-        visibility: visible;
-    }
+#### v0.1, 2013-07-01
+* Font style: size, color, bold, italic, underline, remove font style
+* Para style: bullet, align, outdent, indent, line height
+* Image: drag & drop, dialog
+* Link: popover and dialog
+* Table: create table with dimension picker
 
-    .fancybox-nav {
-        width: 80px;
-    }
+### for Hacker
 
-    .fancybox-prev {
-        left: -80px;
-    }
+#### structure of summernote.js
 
-    .fancybox-next {
-        right: -80px;
-    }
+```
+summernote.js - Renderer.js (Generate markup) - Locale.js (Locale object)
+              ㄴEventHandler.js - Editor.js  (Abstract editor)
+                                ㄴStyle.js   (Style Getter and Setter)
+                                ㄴHistory.js (Store on jQuery.data)
+                                ㄴToolbar.js (Toolbar module)
+                                ㄴPopover.js (Popover module)
+                                ㄴHandle.js  (Handle module)
+                                ㄴDialog.js  (Dialog module)
+-----------------------------Core Script-----------------------------
+  agent.js  (agent information)
+  async.js  (aysnc utility)
+  key.js    (keycode object)
+  dom.js    (dom functions)
+  list.js   (list functions)
+  range.js  (W3CRange extention)
+---------------------------------------------------------------------
+```
 
-In that case, you might want to increase space around box:
+#### build summernote
+```bash
+# grunt-cli is need by grunt; you might have this installed already
+npm install -g grunt-cli
+npm install
 
-    $(".fancybox").fancybox({
-        margin : [20, 60, 20, 60]
-    });
+# build full version of summernote: dist/summernote.js
+grunt build
 
+# generate minified copy: dist/summernote.min.js, dist/summernote.css
+grunt dist
+```
+At this point, you should now have a `build/` directory populated with everything you need to use summernote.
 
-Bug tracker
------------
+#### test summernote
+run tests with PhantomJS
+```bash
+grunt test
+```
 
-Have a bug? Please create an issue on GitHub at https://github.com/fancyapps/fancyBox/issues
+#### start local server for developing summernote.
+run local server with connect and watch.
+```bash
+# this will open a browser on http://localhost:3000.
+grunt server
+# If you change source code, automatically reload your page.
+```
+
+#### Coding convention
+* JSHint: http://www.jshint.com/about/
+* JSHint rule: https://github.com/HackerWins/summernote/blob/master/.jshintrc
+
+### Contacts
+* Email: susukang98@gmail.com
+* Twitter: http://twitter.com/hackerwins
+
+### License
+summernote may be freely distributed under the MIT license.

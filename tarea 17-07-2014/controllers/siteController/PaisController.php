@@ -15,8 +15,12 @@
     		
 			$pais = new Pais();
 			$pais->set_nombre($datos['nombre']);
-			$pais->set_idcontinente($datos['idcontinente']);
-			$pais->set_bandera($archivos['bandera']);
+			$pais->set_direccion($datos['direccion']);
+			$pais->set_ubicacion($datos['ubicacion']);
+			$pais->set_nombrepro($datos['nombrepro']);
+			$pais->set_campo1($datos['campo1']);
+			$pais->set_campo2($datos['campo2']);
+			$pais->set_campo3($archivos['campo3']);
 			
 			if (count($pais->errores)>0) {
 				print_r($pais->errores);

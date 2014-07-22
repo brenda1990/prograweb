@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="source/jquery.fancybox.pack.js"></script>
+        <link rel="stylesheet" href="source/jquery.fancybox.css" type="text/css" media="screen" />
+        <link rel="icon" href="favicon.ico">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/justified-nav.css" rel="stylesheet">
+      
+        <title>Regularizacion</title>
+
+
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="masthead">
+                <h3 class="text-muted">Project name</h3>
+                <ul class="nav nav-justified">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="ejemplo3.php">EJEMPLO 1</a></li>
+                    <li><a href="ejemplo2.php">Services</a></li>
+                    <li><a href="ejemplo3.php">Downloads</a></li>
+                    <li><a href="#"> About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Jumbotron -->
+            <div class="jumbotron">
+                <h1>Brenda Anabel Alvarado Trejo</h1>
+                
+                <p><a class="ejemplo" href="pais.php">EJEMPLO 1</a></p>
+                <p><a class="ejemplo" href="formulario1.php">EJEMPLO 2</a></p>
+                <button type="submit" id="b01" name="b01" class="btn btn-primary">Sonido</button>
+                <p><a href="corazondeniño.mp3" class="sm2_button" title="Listen - Audio">Play</a></p>
+<!-- include libs stylesheets -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.min.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/blackboard.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.min.css">
+
+  <!-- summernote with less and requirejs -->
+  <link rel="stylesheet/less" type="text/css" href="src/less/summernote.less" /> 
+  <script data-main="src/js/app" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.9/require.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <h4>Lately library
+    <span class="label label-info">Bootstrap v3.1.1</span>
+    <span class="label label-success">font-awesome v4.0.3</span>
+    <span class="label label-danger">CodeMirror v3.20.0</span>
+  </h4>
+  <div class="summernote"></div>
+</div>
+<script type="text/javascript">
+  less = {
+    env: "development", // or "production"
+    async: false,       // load imports async
+    fileAsync: false,   // load imports async when in a page under
+    // a file protocol
+    poll: 1000,         // when in watch mode, time in ms between polls
+    functions: {},      // user functions, keyed by name
+    dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+    relativeUrls: false,// whether to adjust url's to be relative
+    // if false, url's are already relative to the
+    // entry less file
+    rootpath: ":/a.com/"// a path to add on to the start of every url
+    //resource
+  };
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.3/less.min.js" type="text/javascript"></script>
+            <div class="row">
+                <div class="col-lg-4">
+                    //un formulario
+                </div>
+                <div class="col-lg-4">
+
+                       //formulario
+
+                </div>
+                <div class="col-lg-4">
+                   //formulario
+                </div>
+            </div>
+
+            <!-- Site footer -->
+            <div class="footer">
+                <p>&copy; Company 2014</p>
+            </div>
+
+        </div> <!-- /container -->
+
+
+<!-- All JS -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/ion.sound.js"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function() {
+                   $.ionSound({
+            sounds: [
+                "beer_can_opening",
+                "bell_ring",
+                "branch_break",
+                "water_droplet"
+            ],
+            path: "sounds/",
+            multiPlay: true,
+            volume: "1.0"
+        });
+
+        $("#b01").on("click", function(){
+            $.ionSound.play("beer_can_opening");
+        });
+        $("#b02").on("click", function(){
+            $.ionSound.play("bell_ring");
+        });
+                $(".ejemplo").fancybox({
+                    'autoScale': false,
+                    'transitionIn': 'none',
+                    'transitionOut': 'none',
+                    'width': 680,
+                    'height': 450,
+                    'type': 'iframe'
+                });
+            });
+            function tinyEditor () {
+ var textarea = $('.tinyEditor');
+ 
+if (textarea.size()) {
+ textarea.each(function () {
+ var editorWidth = $(this).outerWidth(true) * 100 / $(this).parent().outerWidth(true),
+     editorId = 'editor'+$(this).attr('id');
+ 
+editorId = new TINY.editor.edit(editorId, {
+ id: $(this).attr('id'),
+ cssclass: 'tinyeditor',
+ controlclass: 'tinyeditor-control',
+ rowclass: 'tinyeditor-header',
+ dividerclass: 'tinyeditor-divider',
+ controls: ['bold', 'italic', '|',
+ 'orderedlist', 'unorderedlist', '|', 'outdent', 'indent', '|', 'unformat'
+ ]
+ });
+ 
+$(this).parents('form').find('.bt').click(function () {
+ editorId.post();
+ });
+ 
+// make component responsive
+$(this).parents('.tinyeditor').width(editorWidth+'%')
+                .find('iframe').width('100%');
+ })
+ }
+ }
+        </script> 
+
+
+    </body>
+
+</html>
