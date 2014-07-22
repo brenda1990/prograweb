@@ -11,11 +11,7 @@
    
     $paisC->insertaPais($_POST,$_FILES);
 
-  } 
-
-
-   
-
+  }  
 ?>
 <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css"/>
@@ -34,12 +30,12 @@
      <div class="row">
          <div class="col-md-12">
            <h1 class="text-center"> 
-            <span class="glyphicon glyphicon-arrow-up"><span> REGISTRO CONTINENTE
+            <span class="glyphicon glyphicon-arrow-up"><span> REGISTRO PAIS
             </h1>
           </div>
        </div>
        <div class="row" >
-         <div class="col-md-4"> 
+         <div class="col-md-6" aling="center"> 
               <?php
               if($paisC->muestra_errores){
                   ?>
@@ -60,6 +56,10 @@
                 <div class="form-group" id="formulario" name="formulario" >
                   <label for="nombre">Nombre del pais:</label>
                   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                </div>
+                <div class="form-group" id="integer" name="integer">
+                  <label for="nombre">Pais:</label>
+                       <?php echo $paisC->getDropDown1 ('continente', 'idcontinente','idcontinente'); ?>
                 </div>
              <button type="submit" class="btn btn-primary">Guardar</button>
               </form>

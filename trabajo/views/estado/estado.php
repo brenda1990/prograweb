@@ -63,6 +63,10 @@
                   <label for="nombre">Nombre:</label>
                   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
                 </div>
+                <div class="form-group" id="integer" name="integer">
+                  <label for="nombre">Pais:</label>
+                       <?php echo $estadoC->getDropDown1 ('pais', 'idpais','idpais'); ?>
+                </div>
               <button type="submit" class="btn btn-primary">Guardar</button>
               </form>
   </div>
