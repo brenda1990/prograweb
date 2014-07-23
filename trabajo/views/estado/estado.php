@@ -1,11 +1,14 @@
-<?php  
-  include ('../../libs/adodb5/adodb-pager.inc.php');
-  include ('../../libs/adodb5/adodb.inc.php');
-  include ('../../models/Conexion.php');
-  include ('../../models/Modelo.php');
-  include ('../../models/Estado.php');
-  include ('../../controllers/siteController/ControllerEstado.php');
-  include ('../../libs/Er.php');
+<?php 
+    include ('../../libs/security.php');
+    include ('../layouts/header.php');
+    include ('../../libs/adodb5/adodb-pager.inc.php');
+    include ('../../libs/adodb5/adodb.inc.php');
+    include ('../../models/Conexion.php');
+    include ('../../models/Modelo.php');
+    include ('../../models/Estado.php');
+    include ('../../controllers/ControllerEstado.php');
+    include ('../../libs/Er.php');
+      include ('../../libs/Fun.php');
     $estadoC = new ControllerEstado();
   if (isset($_POST['nombre'])) {
     $paisC->insertaPais($_POST,$_FILES);
@@ -58,6 +61,7 @@
                
               }
               ?>
+              <body background="estado.jpg">
              <form method="POST" id="formulari" role="form" enctype="multipart/form-data">
                 <div class="form-group" id="formulario" name="formulario">
                   <label for="nombre">Nombre:</label>

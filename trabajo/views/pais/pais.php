@@ -1,11 +1,14 @@
-<?php  
-  include ('../../libs/adodb5/adodb-pager.inc.php');
-  include ('../../libs/adodb5/adodb.inc.php');
-  include ('../../models/Conexion.php');
-  include ('../../models/Modelo.php');
-  include ('../../models/Pais.php');
-  include ('../../controllers/siteController/ControllerPais.php');
-  include ('../../libs/Er.php');
+<?php 
+    include ('../../libs/security.php');
+    include ('../layouts/header.php');
+    include ('../../libs/adodb5/adodb-pager.inc.php');
+    include ('../../libs/adodb5/adodb.inc.php');
+    include ('../../models/Conexion.php');
+    include ('../../models/Modelo.php');
+    include ('../../models/Pais.php');
+    include ('../../controllers/siteController/ControllerPais.php');
+    include ('../../libs/Er.php');
+      include ('../../libs/Fun.php');
      $paisC = new ControllerPais();
   if (isset($_POST['nombre'])) {
    
@@ -13,6 +16,7 @@
 
   }  
 ?>
+<body background="pais.jpg">
 <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/bootstrapValidator.min.css"/>
@@ -52,6 +56,7 @@
                
               }
               ?>
+              <body background="fondo.jpg">
              <form method="POST" id="formulario" role="form" enctype="multipart/form-data">
                 <div class="form-group" id="formulario" name="formulario" >
                   <label for="nombre">Nombre del pais:</label>

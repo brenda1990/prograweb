@@ -1,11 +1,14 @@
-<?php  
-  include ('../../libs/adodb5/adodb-pager.inc.php');
-  include ('../../libs/adodb5/adodb.inc.php');
-  include ('../../models/Conexion.php');
-  include ('../../models/Modelo.php');
-  include ('../../models/Continente.php');
-  include ('../../controllers/siteController/ControllerContinente.php');
-  include ('../../libs/Er.php');
+<?php 
+    include ('../../libs/security.php');
+    include ('../layouts/header.php');
+    include ('../../libs/adodb5/adodb-pager.inc.php');
+    include ('../../libs/adodb5/adodb.inc.php');
+    include ('../../models/Conexion.php');
+    include ('../../models/Modelo.php');
+    include ('../../models/Continente.php');
+    include ('../../controllers/ControllerContinente.php');
+    include ('../../libs/Er.php');
+      include ('../../libs/Fun.php');
      $continenteC = new ControllerContinente();
   if (isset($_POST['nombre'])) {
    
@@ -17,6 +20,7 @@
    
 
 ?>
+<body background="continente.jpg">
 <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/bootstrapValidator.min.css"/>

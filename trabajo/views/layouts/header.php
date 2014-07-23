@@ -1,5 +1,5 @@
 <?php 
-  define('BASEURL','http:/prograweb');
+  define('BASEURL','http:/prograweb/trabajo');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Clase programación web verano</title>
+    <title>TRABAJO</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/bootstrap.css"/>
     <link rel="stylesheet" href="../css/bootstrapValidator.min.css"/>
@@ -26,17 +26,7 @@
     <!-- Fixed navbar -->
     <div class="navbar navbar-defautl navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Programación Web</a>
-        </div>
         <div class="navbar-collapse collapse">
-         
             
           <ul class="nav navbar-nav navbar-right">
           <?php if(!isset($_SESSION['user'])){ ?>
