@@ -46,16 +46,17 @@ class Modelo extends Conexion {
     }
 
     public function show_grid($select = '*', $where = ' ', $num = '10') {
-        $sql = "SELECT " . $select . " 
-                FROM " . $this->nombre_tabla . " 
-                " . $where;
+        $sql = "SELECT " . $select . " FROM " . $this->nombre_tabla . "  " . $where;
         $grid = new ADODB_Pager($this->db, $sql);
         $grid->Render($rows_per_page = $num);
     }
-     public function show_grid1($select = '*', $where = ' ', $num = '10') {
-        $sql = "SELECT " . $select . " 
-                FROM " . $this->nombre_tabla . " 
-                " . $where;
+      public function show1($select = '*', $where = ' ', $num = '10') {
+        $sql = "SELECT " . $select . " FROM " . $this->nombre_tabla . " " . $where;
+        $grid = new ADODB_Pager($this->db, $sql);
+        $grid->Render($rows_per_page = $num);
+    }
+     public function conti($select = '', $where = ' ', $num = '10') {
+        $sql = "SELECT " . $select . " FROM " . $this->nombre_tabla . " " . $where ;
         $grid = new ADODB_Pager($this->db, $sql);
         $grid->Render($rows_per_page = $num);
     }
@@ -145,6 +146,7 @@ class Modelo extends Conexion {
 
  return $dropDown;
 }
+
 
 }
 ?>

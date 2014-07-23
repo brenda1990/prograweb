@@ -27,6 +27,22 @@
     <div class="navbar navbar-defautl navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          
+                     <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">OPCIONES  <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="<?php echo BASEURL; ?>/views/site/inicio.php">Inicio</a></li>
+                    <li class="divider"></li>
+                  <li><a href="<?php echo BASEURL; ?>/views/continente/listacontinente.php">Lista Continente</a></li>
+                     <li class="divider"></li>
+                  <li><a href="<?php echo BASEURL; ?>/views/pais/listapais.php">Lista Pais</a></li>
+                    <li class="divider"></li>
+                  <li><a href="<?php echo BASEURL; ?>/views/estado/listaestado.php">Lista Estado</a></li>
+                    <li class="divider"></li>
+                  </ul>
+            </li>
+          </ul>
             
           <ul class="nav navbar-nav navbar-right">
           <?php if(!isset($_SESSION['user'])){ ?>
@@ -39,8 +55,6 @@
             </li>
             <?php } ?>
           </ul>
-          
-
         </div><!--/.nav-collapse -->
       </div>
 

@@ -15,11 +15,31 @@ session_start();
 	$continenteC = new ControllerContinente();
 	
 ?>	
+
+<div class=row>
+
+	<body background="vista.jpg">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+
+			<h2 class="text-center">LISTA DE PAIS</h2>
+			<?php $paisC ->show1(); ?>			
+			<form method="post" action="listapais.php">
+				<input type="submit" name"mostrar" Value="Mostrar">
+
+		    </form>
+
+		</div>
+		<div class="col-md-2">
+		</div>
+
+</div>
 <?php
 include("conexion.php");
 $con=conectar();
 if (isset($_REQUEST['mostrar'])) {
-	$query="select * from pais";
+	$query="select * from ";
 	$resultado=mysql_query($query,$con);
 	$total=mysql_num_rows($resultado);
 	echo "<table><tr><td>id</td><td>Nombre</td><td>Apellidos</td><td>";
@@ -34,23 +54,4 @@ if (isset($_REQUEST['mostrar'])) {
 	echo "Total de Personas Registradas : $total";
 }
 ?>
-<div class=row>
-
-	<body background="vista.jpg">
-		<div class="col-md-2">
-		</div>
-		<div class="col-md-8">
-			<h2 class="text-center">LISTA DE PAIS</h2>
-			<?php $paisC ->show_grid(); ?>
-			<?php $paisC  ->show_grid1(); ?>
-			<form method="post" action="listapais.php">
-				<input type="submit" name"mostrar" Value="Mostrar">
-		    </form>
-
-		</div>
-		<div class="col-md-2">
-		</div>
-
-</div>
-
 <?php include ('../layouts/footer.php'); ?>

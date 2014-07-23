@@ -1,6 +1,11 @@
 <?php 
-  session_start();
-  include ('../layouts/header.php');
+    include ('../../libs/security.php');
+    include ('../layouts/header.php');
+    include ('../../libs/adodb5/adodb-pager.inc.php');
+    include ('../../libs/adodb5/adodb.inc.php');
+    include ('../../models/Conexion.php');
+    include ('../../models/Modelo.php');
+    include ('../../libs/Er.php');
 ?>
 	<body background="fondo.jpg">
    <div="container">
@@ -25,28 +30,7 @@
 		</div>
 	</div>
 	<br/><br/><br/>
-	<div class="row" align="center">
-	<div class="col-md-1" >
-			<label></label>
-		</div>
-		<div class="col-md-3" >
-			<label>LISTA DE CONTINENTES</label>
-			<a href="../continente/listacontinente.php"><img src="boton_vista.jpg"></a>
-		</div>
 
-		<div class="col-md-3">
-			<label>LISTA DE PAISES</label>
-			<a href="../pais/listapais.php"><img src="boton_vista.jpg"></a>
-		</div>
-
-		<div class="col-md-3">
-			<label>LISTA DE ESTADOS</label>
-			<a href="../estado/listaestado.php"><img src="boton_vista.jpg"></a>
-		</div>
-		<div class="col-md-1" >
-			<label></label>
-		</div>
-	</div>
 	<div class="row" align="center">
 	<div class="col-md-1" >
 			<label></label>
