@@ -31,17 +31,17 @@
 		</div>
 		<div class="col-md-3" >
 			<label>LISTA DE CONTINENTES</label>
-			<a href="../continente/continente.php"><img src="boton_vista.jpg"></a>
+			<a href="../continente/listacontinente.php"><img src="boton_vista.jpg"></a>
 		</div>
 
 		<div class="col-md-3">
 			<label>LISTA DE PAISES</label>
-			<a href="../pais/pais.php"><img src="boton_vista.jpg"></a>
+			<a href="../pais/listapais.php"><img src="boton_vista.jpg"></a>
 		</div>
 
 		<div class="col-md-3">
 			<label>LISTA DE ESTADOS</label>
-			<a href="../estado/estado.php"><img src="boton_vista.jpg"></a>
+			<a href="../estado/listaestado.php"><img src="boton_vista.jpg"></a>
 		</div>
 		<div class="col-md-1" >
 			<label></label>

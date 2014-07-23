@@ -11,7 +11,7 @@
       include ('../../libs/Fun.php');
     $estadoC = new ControllerEstado();
   if (isset($_POST['nombre'])) {
-    $paisC->insertaPais($_POST,$_FILES);
+    $estadoC->insertaEstado($_POST,$_FILES);
   } 
 
 

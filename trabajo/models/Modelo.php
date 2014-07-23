@@ -52,6 +52,14 @@ class Modelo extends Conexion {
         $grid = new ADODB_Pager($this->db, $sql);
         $grid->Render($rows_per_page = $num);
     }
+     public function show_grid1($select = '*', $where = ' ', $num = '10') {
+        $sql = "SELECT " . $select . " 
+                FROM " . $this->nombre_tabla . " 
+                " . $where;
+        $grid = new ADODB_Pager($this->db, $sql);
+        
+        $grid->Render($rows_per_page = $num);
+    }
 
     public function actualiza($id) {
         if (is_integer($id)) {
