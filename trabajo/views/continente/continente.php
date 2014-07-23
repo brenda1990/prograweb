@@ -1,14 +1,15 @@
 <?php 
-    include ('../../libs/security.php');
-    include ('../layouts/header.php');
+session_start();
+   // include ('../../libs/security.php');
+   // include ('../layouts/header.php');
     include ('../../libs/adodb5/adodb-pager.inc.php');
     include ('../../libs/adodb5/adodb.inc.php');
     include ('../../models/Conexion.php');
     include ('../../models/Modelo.php');
     include ('../../models/Continente.php');
-    include ('../../controllers/ControllerContinente.php');
+    include ('../../controllers/siteController/ControllerContinente.php');
     include ('../../libs/Er.php');
-      include ('../../libs/Fun.php');
+      
      $continenteC = new ControllerContinente();
   if (isset($_POST['nombre'])) {
    
