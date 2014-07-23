@@ -8,14 +8,15 @@ class Pais extends Modelo{
     public $atributos = array(
         'nombre'=>array(),
         'idcontinente'=>array(),
-      
+        'bandera'=>array(),
     );
     
     public $errores = array( );
     
     private $nombre;
     private $idcontinente;
-
+    private $bandera;
+       
     
     function Pais(){
         parent::Modelo();
@@ -40,25 +41,46 @@ class Pais extends Modelo{
         
         if ( !$er->valida_nombre($valor) ){
             $this->errores[] = "Este nombre (".$valor.") no es valido";
-        }               
+        }
+
+               
         $this->nombre = trim($valor);
         
     }
-     public function get_idpais(){
-        return $this->idpais;
+     public function get_idcontinente(){
+        return $this->idcontinente;
     } 
 
-    public function set_idpais($valor){
+    public function set_idcontinente($valor){
 
         $er = new Er();
         
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = "Este nombre (".$valor.") no es valido";
-        }               
-        $this->pais = trim($valor);
+        if ( !$er->valida_numero($valor) ){
+            $this->errores[] = "Este id (".$valor.") no es valido";
+        }
+
+               
+        $this->idcontinente = trim($valor);
+        
+    } 
+     public function get_bandera(){
+        return $this->bandera;
+    } 
+
+    public function set_bandera($valor){
+
+        $er = new Er();
+        
+        if ( !$er->valida_imagen($valor['name']) ){
+            $this->errores[] = "Esta bandera(".$valor['name'].") no es valida";
+        }
+
+               
+        $this->bandera = trim($valor['name']);
         
     }
-  
+
+    
     
     
 }

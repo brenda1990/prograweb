@@ -9,6 +9,7 @@
 		
 			//$conti = new Continente();
 			$this->set_nombre($datos['nombre']); 
+			$this->set_idpais($datos['idpais']); 
 		   if(count($this->errores)>0){
 		   	     $this->muestra_errores=true;
 		   }else{

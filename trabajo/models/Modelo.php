@@ -57,7 +57,6 @@ class Modelo extends Conexion {
                 FROM " . $this->nombre_tabla . " 
                 " . $where;
         $grid = new ADODB_Pager($this->db, $sql);
-        
         $grid->Render($rows_per_page = $num);
     }
 
@@ -137,7 +136,7 @@ class Modelo extends Conexion {
 
  foreach ($rows as $key => $value) {
 
- $dropDown.= '<option value="'.$value['idequipo'].'">'.utf8_encode($value['nombre']).'</option>';
+ $dropDown.= '<option value="'.$value['idpais'].'">'.utf8_encode($value['nombre']).'</option>';
 
 
  }

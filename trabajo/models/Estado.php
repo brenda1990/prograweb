@@ -54,8 +54,8 @@ class Estado extends Modelo{
 
         $er = new Er();
         
-        if ( !$er->valida_nombre($valor) ){
-            $this->errores[] = "Este nombre (".$valor.") no es valido";
+        if ( !$er->valida_numero($valor) ){
+            $this->errores[] = "Este pais (".$valor.") no es valido";
         }
 
                

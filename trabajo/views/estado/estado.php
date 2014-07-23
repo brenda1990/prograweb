@@ -8,7 +8,6 @@
     include ('../../models/Estado.php');
     include ('../../controllers/siteController/ControllerEstado.php');
     include ('../../libs/Er.php');
-      include ('../../libs/Fun.php');
     $estadoC = new ControllerEstado();
   if (isset($_POST['nombre'])) {
     $estadoC->insertaEstado($_POST,$_FILES);
@@ -69,7 +68,7 @@
                 </div>
                 <div class="form-group" id="integer" name="integer">
                   <label for="nombre">Pais:</label>
-                       <?php echo $estadoC->getDropDown1 ('pais', 'idpais','idpais'); ?>
+                       <?php echo $estadoC->getDropDown2 ('pais', 'idpais','idpais'); ?>
                 </div>
               <button type="submit" class="btn btn-primary">Guardar</button>
               </form>

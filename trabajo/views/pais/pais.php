@@ -8,7 +8,6 @@
     include ('../../models/Pais.php');
     include ('../../controllers/siteController/ControllerPais.php');
     include ('../../libs/Er.php');
-      //include ('../../libs/Fun.php');
      $paisC = new ControllerPais();
   if (isset($_POST['nombre'])) {
    
@@ -57,16 +56,19 @@
               }
               ?>
               <body background="fondo.jpg">
-             <form method="POST" id="formulario" role="form" enctype="multipart/form-data">
-                <div class="form-group" id="formulario" name="formulario" >
-                  <label for="nombre">Nombre del pais:</label>
+              <form method="POST" id="formulari" role="form" enctype="multipart/form-data">
+                <div class="form-group" id="formulario" name="formulario">
+                  <label for="nombre">NOMBRE:</label>
                   <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
                 </div>
                 <div class="form-group" id="integer" name="integer">
-                  <label for="nombre">Pais:</label>
+                  <label for="nombre">CONTINENTE:</label>
+                  <label for="exampleInputEmail1">Continente: </label>
                        <?php echo $paisC->getDropDown1 ('continente', 'idcontinente','idcontinente'); ?>
                 </div>
-             <button type="submit" class="btn btn-primary">Guardar</button>
+                      <label for="">Agregar bandera:</label>
+                      <input type="file" class="form-control" id="bandera" name="bandera" placeholder="bandera" required>
+                       <button type="submit" class="btn btn-primary">Guardar</button>
               </form>
                  
   </div>
@@ -85,13 +87,21 @@
     $(function () {
         $('#formulario').bootstrapValidator({
         fields: {
-            nombre: {
-                message: 'The username is not valid',
+           nombre: {
+                message: 'Ingrese un nombre valido',
                 validators: {
                     notEmpty: {
-                        message: 'Necesarios 6 caracteres minimos'
+                        message: 'The username is required and cannot be empty'
                     },
-                   
+                    stringLength: {
+                        min: 6,
+                        max: 30,
+                        message: 'The username must be more than 6 and less than 30 characters long'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_]+$/,
+                        message: 'The username can only consist of alphabetical, number and underscore'
+                    }
                 }
             },
         }
